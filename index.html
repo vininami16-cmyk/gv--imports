@@ -36,7 +36,7 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
+  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
@@ -45,184 +45,59 @@
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(0,255,102,0.08);
   }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.9rem;
-    letter-spacing: 3px;
-    color: var(--white);
-  }
+  .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: 3px; color: var(--white); }
   .nav-logo span { color: var(--green); }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    color: var(--gray-light); text-decoration: none;
-    font-size: 0.82rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase;
-    transition: color .25s;
-  }
+  .nav-links a { color: var(--gray-light); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; transition: color .25s; }
   .nav-links a:hover { color: var(--green); }
-  .nav-ig {
-    display: flex; align-items: center; gap: 8px;
-    background: var(--green); color: var(--black);
-    padding: 9px 20px; border-radius: 4px;
-    font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-    text-decoration: none; transition: background .2s, transform .2s;
-  }
+  .nav-ig { display: flex; align-items: center; gap: 8px; background: var(--green); color: var(--black); padding: 9px 20px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: background .2s, transform .2s; }
   .nav-ig:hover { background: #33ff88; transform: translateY(-1px); }
   .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
   .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: .3s; }
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    text-align: center; padding: 100px 5% 60px;
-    position: relative; overflow: hidden;
-    background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,255,102,0.05) 0%, transparent 70%);
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(0,255,102,0.02) 60px, rgba(0,255,102,0.02) 61px),
-                repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,255,102,0.02) 60px, rgba(0,255,102,0.02) 61px);
-    pointer-events: none;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    border: 1px solid rgba(0,255,102,0.4);
-    color: var(--green); font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px;
-    text-transform: uppercase; padding: 7px 18px; border-radius: 50px;
-    margin-bottom: 28px;
-    animation: fadeUp .7s ease both;
-  }
+  /* HERO */
+  .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 5% 60px; position: relative; overflow: hidden; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0,255,102,0.05) 0%, transparent 70%); }
+  .hero::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(0,255,102,0.02) 60px, rgba(0,255,102,0.02) 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,255,102,0.02) 60px, rgba(0,255,102,0.02) 61px); pointer-events: none; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(0,255,102,0.4); color: var(--green); font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; padding: 7px 18px; border-radius: 50px; margin-bottom: 28px; animation: fadeUp .7s ease both; }
   .hero-badge::before { content: '●'; font-size: 0.5rem; animation: pulse 1.5s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
-  .hero h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3.5rem, 10vw, 8rem);
-    line-height: .95; letter-spacing: 2px;
-    animation: fadeUp .8s .1s ease both;
-  }
+  .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.5rem, 10vw, 8rem); line-height: .95; letter-spacing: 2px; animation: fadeUp .8s .1s ease both; }
   .hero h1 .green { color: var(--green); text-shadow: 0 0 40px rgba(0,255,102,0.5); }
-  .hero p {
-    max-width: 520px; margin: 24px auto 0;
-    font-size: 1rem; color: var(--gray-light); line-height: 1.7; font-weight: 300;
-    animation: fadeUp .8s .2s ease both;
-  }
-  .hero-btns {
-    display: flex; gap: 16px; margin-top: 44px; flex-wrap: wrap; justify-content: center;
-    animation: fadeUp .8s .3s ease both;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: var(--green); color: var(--black);
-    padding: 16px 36px; border-radius: 4px;
-    font-size: 0.9rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-    text-decoration: none; transition: all .25s;
-    box-shadow: 0 0 30px rgba(0,255,102,0.3);
-  }
+  .hero p { max-width: 520px; margin: 24px auto 0; font-size: 1rem; color: var(--gray-light); line-height: 1.7; font-weight: 300; animation: fadeUp .8s .2s ease both; }
+  .hero-btns { display: flex; gap: 16px; margin-top: 44px; flex-wrap: wrap; justify-content: center; animation: fadeUp .8s .3s ease both; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--green); color: var(--black); padding: 16px 36px; border-radius: 4px; font-size: 0.9rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: all .25s; box-shadow: 0 0 30px rgba(0,255,102,0.3); }
   .btn-primary:hover { background: #33ff88; box-shadow: 0 0 50px rgba(0,255,102,0.5); transform: translateY(-2px); }
-  .btn-outline {
-    display: inline-flex; align-items: center; gap: 10px;
-    border: 1.5px solid rgba(255,255,255,0.2); color: var(--white);
-    padding: 16px 36px; border-radius: 4px;
-    font-size: 0.9rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-    text-decoration: none; transition: all .25s;
-  }
+  .btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 1.5px solid rgba(255,255,255,0.2); color: var(--white); padding: 16px 36px; border-radius: 4px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: all .25s; }
   .btn-outline:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); }
-  .hero-stats {
-    display: flex; gap: 3rem; margin-top: 60px; flex-wrap: wrap; justify-content: center;
-    animation: fadeUp .8s .4s ease both;
-  }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 60px; flex-wrap: wrap; justify-content: center; animation: fadeUp .8s .4s ease both; }
   .stat { text-align: center; }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem; color: var(--green); line-height: 1;
-  }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--green); line-height: 1; }
   .stat-label { font-size: 0.72rem; color: var(--gray); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
-  .hero-scroll {
-    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 6px;
-    color: var(--gray); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
-    animation: fadeUp 1s .6s ease both;
-  }
-  .scroll-line {
-    width: 1px; height: 40px;
-    background: linear-gradient(to bottom, var(--green), transparent);
-    animation: scrollDown 1.5s ease-in-out infinite;
-  }
+  .hero-scroll { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--gray); font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; animation: fadeUp 1s .6s ease both; }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--green), transparent); animation: scrollDown 1.5s ease-in-out infinite; }
   @keyframes scrollDown { 0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1);transform-origin:top} 51%{transform:scaleY(1);transform-origin:bottom} 100%{transform:scaleY(0);transform-origin:bottom} }
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
-  /* ── SECTION HEADERS ── */
+  /* SECTION HEADERS */
   .section-header { text-align: center; margin-bottom: 60px; }
-  .section-tag {
-    display: inline-block;
-    color: var(--green); font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
-    margin-bottom: 14px;
-  }
-  .section-header h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: 2px;
-  }
+  .section-tag { display: inline-block; color: var(--green); font-size: 0.72rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px; }
+  .section-header h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 5vw, 3.5rem); letter-spacing: 2px; }
   .section-header p { color: var(--gray-light); font-size: 0.95rem; margin-top: 12px; max-width: 500px; margin-inline: auto; line-height: 1.7; }
   .divider { width: 40px; height: 3px; background: var(--green); margin: 18px auto 0; border-radius: 2px; }
 
-  /* ── CATALOG ── */
+  /* CATALOG */
   #catalogo { padding: 100px 5%; }
-  .catalog-filters {
-    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px;
-  }
-  .filter-btn {
-    padding: 8px 22px; border: 1.5px solid rgba(255,255,255,0.12);
-    background: transparent; color: var(--gray-light);
-    border-radius: 50px; font-size: 0.78rem; font-weight: 500; letter-spacing: 1px;
-    cursor: pointer; transition: all .2s; font-family: inherit;
-  }
-  .filter-btn.active, .filter-btn:hover {
-    border-color: var(--green); color: var(--green); background: rgba(0,255,102,0.06);
-  }
-  .catalog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .product-card {
-    background: var(--black-3);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 8px; overflow: hidden;
-    transition: all .3s; position: relative; cursor: pointer;
-  }
-  .product-card:hover {
-    border-color: rgba(0,255,102,0.35);
-    transform: translateY(-6px);
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(0,255,102,0.06);
-  }
+  .catalog-filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 50px; }
+  .filter-btn { padding: 8px 22px; border: 1.5px solid rgba(255,255,255,0.12); background: transparent; color: var(--gray-light); border-radius: 50px; font-size: 0.78rem; font-weight: 500; letter-spacing: 1px; cursor: pointer; transition: all .2s; font-family: inherit; }
+  .filter-btn.active, .filter-btn:hover { border-color: var(--green); color: var(--green); background: rgba(0,255,102,0.06); }
+  .catalog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .product-card { background: var(--black-3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; overflow: hidden; transition: all .3s; position: relative; cursor: pointer; }
+  .product-card:hover { border-color: rgba(0,255,102,0.35); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(0,255,102,0.06); }
   .product-card:hover .card-overlay { opacity: 1; }
-  .card-img {
-    width: 100%; aspect-ratio: 4/5; object-fit: cover;
-    background: var(--black-4);
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
+  .card-img { width: 100%; aspect-ratio: 4/5; position: relative; overflow: hidden; }
   .card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .card-placeholder {
-    width: 100%; aspect-ratio: 4/5;
-    background: linear-gradient(135deg, var(--black-4) 0%, #222 100%);
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
-  }
-  .card-placeholder svg { opacity: .2; }
-  .card-placeholder span { color: var(--gray); font-size: 0.75rem; letter-spacing: 1px; }
-  .card-overlay {
-    position: absolute; inset: 0;
-    background: rgba(0,255,102,0.05);
-    opacity: 0; transition: opacity .3s;
-    pointer-events: none;
-  }
-  .card-badge {
-    position: absolute; top: 14px; left: 14px;
-    background: var(--green); color: var(--black);
-    font-size: 0.65rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
-    padding: 4px 10px; border-radius: 2px;
-  }
+  .card-overlay { position: absolute; inset: 0; background: rgba(0,255,102,0.05); opacity: 0; transition: opacity .3s; pointer-events: none; }
+  .card-badge { position: absolute; top: 14px; left: 14px; background: var(--green); color: var(--black); font-size: 0.65rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 2px; }
   .card-body { padding: 18px 20px 20px; }
   .card-league { font-size: 0.68rem; color: var(--green); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
   .card-name { font-size: 1rem; font-weight: 700; margin: 4px 0 2px; }
@@ -230,146 +105,69 @@
   .card-footer { display: flex; align-items: center; justify-content: space-between; }
   .card-price { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: var(--green); letter-spacing: 1px; }
   .card-price span { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--gray); font-weight: 400; display: block; }
-  .card-btn {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: var(--green); color: var(--black);
-    padding: 9px 16px; border-radius: 4px;
-    font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
-    text-decoration: none; transition: all .2s; border: none; cursor: pointer; font-family: inherit;
-  }
+  .card-btn { display: inline-flex; align-items: center; gap: 7px; background: var(--green); color: var(--black); padding: 9px 16px; border-radius: 4px; font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; transition: all .2s; border: none; cursor: pointer; font-family: inherit; }
   .card-btn:hover { background: #33ff88; }
-  .catalog-add {
-    margin-top: 50px; text-align: center;
-    padding: 40px;
-    border: 2px dashed rgba(0,255,102,0.2);
-    border-radius: 8px; color: var(--gray);
-    font-size: 0.85rem;
-  }
-  .catalog-add strong { color: var(--green); display: block; font-size: 1rem; margin-bottom: 6px; }
+  .card-info { font-size: 0.72rem; color: var(--gray); margin-top: 10px; text-align: center; }
+  .card-info a { color: var(--green); text-decoration: none; }
 
-  /* ── BENEFITS ── */
+  /* BENEFITS */
   #beneficios { padding: 100px 5%; }
-  .benefits-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px;
-  }
-  .benefit-card {
-    padding: 36px 28px;
-    background: var(--black-3);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 8px; text-align: center;
-    transition: all .3s; position: relative; overflow: hidden;
-  }
-  .benefit-card::before {
-    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
-    background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .3s;
-  }
+  .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+  .benefit-card { padding: 36px 28px; background: var(--black-3); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; text-align: center; transition: all .3s; position: relative; overflow: hidden; }
+  .benefit-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--green); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
   .benefit-card:hover { border-color: rgba(0,255,102,0.2); transform: translateY(-4px); }
   .benefit-card:hover::before { transform: scaleX(1); }
-  .benefit-icon {
-    width: 60px; height: 60px; margin: 0 auto 20px;
-    background: rgba(0,255,102,0.08); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-  }
+  .benefit-icon { width: 60px; height: 60px; margin: 0 auto 20px; background: rgba(0,255,102,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
   .benefit-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 10px; letter-spacing: .5px; }
   .benefit-card p { font-size: 0.82rem; color: var(--gray-light); line-height: 1.65; }
-  .benefit-highlight {
-    grid-column: 1/-1;
-    background: linear-gradient(135deg, rgba(0,255,102,0.1) 0%, rgba(0,255,102,0.04) 100%);
-    border-color: rgba(0,255,102,0.3);
-    display: flex; align-items: center; justify-content: center; gap: 20px;
-    padding: 32px 40px; flex-wrap: wrap; text-align: left;
-  }
+  .benefit-highlight { grid-column: 1/-1; background: linear-gradient(135deg, rgba(0,255,102,0.1) 0%, rgba(0,255,102,0.04) 100%); border-color: rgba(0,255,102,0.3); display: flex; align-items: center; justify-content: center; gap: 20px; padding: 32px 40px; flex-wrap: wrap; text-align: left; }
   .benefit-highlight .benefit-icon { margin: 0; flex-shrink: 0; background: rgba(0,255,102,0.15); font-size: 2rem; width: 70px; height: 70px; }
   .benefit-highlight h3 { font-size: 1.2rem; color: var(--green); }
   .benefit-highlight p { font-size: 0.9rem; }
 
-  /* ── TRUST ── */
+  /* TRUST */
   #confianca { padding: 100px 5%; }
   .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
   .trust-items { display: flex; flex-direction: column; gap: 28px; }
   .trust-item { display: flex; gap: 20px; align-items: flex-start; }
-  .trust-icon {
-    width: 48px; height: 48px; flex-shrink: 0;
-    background: rgba(0,255,102,0.1); border-radius: 8px;
-    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
-  }
+  .trust-icon { width: 48px; height: 48px; flex-shrink: 0; background: rgba(0,255,102,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
   .trust-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
   .trust-item p { font-size: 0.82rem; color: var(--gray-light); line-height: 1.65; }
-  .trust-visual {
-    background: var(--black-3); border: 1px solid rgba(0,255,102,0.15);
-    border-radius: 12px; padding: 44px;
-    display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .trust-visual::before {
-    content: ''; position: absolute; top: -40px; right: -40px;
-    width: 120px; height: 120px; border-radius: 50%;
-    background: rgba(0,255,102,0.06);
-  }
+  .trust-visual { background: var(--black-3); border: 1px solid rgba(0,255,102,0.15); border-radius: 12px; padding: 44px; display: flex; flex-direction: column; align-items: center; gap: 24px; text-align: center; position: relative; overflow: hidden; }
+  .trust-visual::before { content: ''; position: absolute; top: -40px; right: -40px; width: 120px; height: 120px; border-radius: 50%; background: rgba(0,255,102,0.06); }
   .trust-shield { font-size: 4rem; }
   .trust-visual h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; }
   .trust-visual p { color: var(--gray-light); font-size: 0.88rem; line-height: 1.65; }
-  .trust-guarantee {
-    background: rgba(0,255,102,0.1); border: 1px solid rgba(0,255,102,0.3);
-    border-radius: 8px; padding: 18px 24px; width: 100%;
-  }
+  .trust-guarantee { background: rgba(0,255,102,0.1); border: 1px solid rgba(0,255,102,0.3); border-radius: 8px; padding: 18px 24px; width: 100%; }
   .trust-guarantee strong { color: var(--green); display: block; margin-bottom: 4px; font-size: 0.9rem; }
   .trust-guarantee span { color: var(--gray-light); font-size: 0.8rem; }
 
-  /* ── FAQ ── */
+  /* FAQ */
   #faq { padding: 100px 5%; }
   .faq-list { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
-  .faq-item {
-    background: var(--black-3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; overflow: hidden;
-  }
-  .faq-question {
-    width: 100%; display: flex; align-items: center; justify-content: space-between;
-    padding: 22px 24px; background: none; border: none; cursor: pointer;
-    text-align: left; color: var(--white); font-family: inherit;
-    font-size: 0.92rem; font-weight: 600; gap: 16px;
-    transition: color .2s;
-  }
+  .faq-item { background: var(--black-3); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; overflow: hidden; }
+  .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 22px 24px; background: none; border: none; cursor: pointer; text-align: left; color: var(--white); font-family: inherit; font-size: 0.92rem; font-weight: 600; gap: 16px; transition: color .2s; }
   .faq-question:hover { color: var(--green); }
   .faq-question.open { color: var(--green); border-bottom: 1px solid rgba(0,255,102,0.15); }
-  .faq-icon {
-    width: 28px; height: 28px; flex-shrink: 0;
-    border: 1.5px solid rgba(255,255,255,0.15); border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.1rem; line-height: 1; transition: all .3s;
-    color: var(--gray);
-  }
+  .faq-icon { width: 28px; height: 28px; flex-shrink: 0; border: 1.5px solid rgba(255,255,255,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; line-height: 1; transition: all .3s; color: var(--gray); }
   .faq-question.open .faq-icon { border-color: var(--green); color: var(--green); transform: rotate(45deg); }
-  .faq-answer {
-    max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease;
-    padding: 0 24px; color: var(--gray-light); font-size: 0.86rem; line-height: 1.75;
-  }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .35s ease; padding: 0 24px; color: var(--gray-light); font-size: 0.86rem; line-height: 1.75; }
   .faq-answer.open { max-height: 200px; padding: 18px 24px 22px; }
 
-  /* ── CTA ── */
-  .cta-section {
-    padding: 100px 5%; text-align: center;
-    background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0,255,102,0.06) 0%, transparent 70%);
-  }
+  /* CTA */
+  .cta-section { padding: 100px 5%; text-align: center; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(0,255,102,0.06) 0%, transparent 70%); }
   .cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); letter-spacing: 2px; margin-bottom: 16px; }
   .cta-section p { color: var(--gray-light); font-size: 1rem; margin-bottom: 40px; }
   .cta-section .btn-primary { font-size: 1rem; padding: 18px 48px; }
 
-  /* ── FOOTER ── */
-  footer {
-    border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 5% 30px;
-  }
+  /* FOOTER */
+  footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 60px 5% 30px; }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
   .footer-brand .logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 3px; }
   .footer-brand .logo span { color: var(--green); }
   .footer-brand p { color: var(--gray); font-size: 0.82rem; line-height: 1.7; margin-top: 14px; max-width: 280px; }
   .footer-social { display: flex; gap: 12px; margin-top: 20px; }
-  .social-btn {
-    width: 38px; height: 38px; border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center; font-size: 1rem;
-    text-decoration: none; transition: all .2s;
-  }
+  .social-btn { width: 38px; height: 38px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 1rem; text-decoration: none; transition: all .2s; }
   .social-btn:hover { border-color: var(--green); background: rgba(0,255,102,0.1); }
   .footer-col h4 { font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--green); margin-bottom: 18px; font-weight: 600; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -379,7 +177,7 @@
   .footer-bottom p { color: var(--gray); font-size: 0.76rem; }
   .footer-bottom span { color: var(--green); }
 
-  /* ── RESPONSIVE ── */
+  /* RESPONSIVE */
   @media (max-width: 900px) {
     .catalog-grid { grid-template-columns: repeat(2, 1fr); }
     .trust-grid { grid-template-columns: 1fr; }
@@ -396,11 +194,8 @@
     .benefit-highlight { flex-direction: column; text-align: center; }
   }
 
-  /* ── MOBILE NAV ── */
-  .mobile-nav {
-    display: none; position: fixed; inset: 0; z-index: 99;
-    background: rgba(8,8,8,0.97); flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
-  }
+  /* MOBILE NAV */
+  .mobile-nav { display: none; position: fixed; inset: 0; z-index: 99; background: rgba(8,8,8,0.97); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
   .mobile-nav.open { display: flex; }
   .mobile-nav a { color: var(--white); font-size: 1.5rem; font-family: 'Bebas Neue'; letter-spacing: 3px; text-decoration: none; transition: color .2s; }
   .mobile-nav a:hover { color: var(--green); }
@@ -409,7 +204,6 @@
 </head>
 <body>
 
-<!-- WAVE BG -->
 <div style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;">
   <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="width:100%;height:100%;" xmlns="http://www.w3.org/2000/svg">
     <path d="M-80 180 C120 80 280 320 520 210 C710 120 860 350 1100 230 C1260 150 1370 280 1520 200" stroke="rgba(180,180,180,0.07)" stroke-width="1.5" fill="none"/>
@@ -417,10 +211,9 @@
     <path d="M-80 430 C150 330 350 560 620 430 C840 320 1020 560 1260 440 C1370 390 1430 470 1520 440" stroke="rgba(180,180,180,0.065)" stroke-width="1.4" fill="none"/>
     <path d="M-80 540 C180 450 400 660 680 540 C900 430 1080 640 1300 530 C1400 480 1460 560 1520 530" stroke="rgba(180,180,180,0.05)" stroke-width="1" fill="none"/>
     <path d="M-80 650 C200 560 440 760 720 640 C940 540 1120 730 1340 630 C1420 590 1470 660 1520 640" stroke="rgba(180,180,180,0.06)" stroke-width="1.3" fill="none"/>
-    <path d="M-80 760 C220 680 480 860 760 750 C980 660 1160 840 1380 740 C1440 710 1490 770 1520 750" stroke="rgba(180,180,180,0.045)" stroke-width="1" fill="none"/>
-    <path d="M-80 860 C260 790 520 950 800 850 C1020 770 1200 930 1420 840 L1520 860" stroke="rgba(180,180,180,0.04)" stroke-width="0.9" fill="none"/>
   </svg>
 </div>
+
 <div style="position:relative;z-index:1">
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-close" onclick="closeMobileNav()">✕</button>
@@ -428,7 +221,7 @@
   <a href="#beneficios" onclick="closeMobileNav()">Benefícios</a>
   <a href="#confianca" onclick="closeMobileNav()">Confiança</a>
   <a href="#faq" onclick="closeMobileNav()">FAQ</a>
-  <a href="https://instagram.com/gvimports" target="_blank" style="color:var(--green)">Instagram</a>
+  <a href="https://instagram.com/gv.imports10" target="_blank" style="color:var(--green)">Instagram</a>
 </div>
 
 <!-- NAV -->
@@ -440,7 +233,7 @@
     <li><a href="#confianca">Confiança</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="https://instagram.com/gvimports" target="_blank" class="nav-ig" style="display:flex;align-items:center;gap:8px;">
+  <a href="https://instagram.com/gv.imports10" target="_blank" class="nav-ig">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     Instagram
   </a>
@@ -451,13 +244,13 @@
 <section class="hero">
   <div class="hero-badge">⚡ Camisas Premium de Futebol</div>
   <h1>VISTA A<br><span class="green">PAIXÃO</span><br>DO FUTEBOL</h1>
-  <p>Camisas dos maiores clubes do mundo com qualidade premium, entregues direto pra você. Encontre a sua favorita no catálogo.</p>
+  <p>Camisas das maiores seleções do mundo com qualidade premium, entregues direto pra você. Encontre a sua favorita no catálogo.</p>
   <div class="hero-btns">
     <a href="#catalogo" class="btn-primary">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
       Ver Catálogo
     </a>
-    <a href="https://instagram.com/gvimports" target="_blank" class="btn-outline">
+    <a href="https://instagram.com/gv.imports10" target="_blank" class="btn-outline">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
       Chamar no Instagram
     </a>
@@ -481,27 +274,28 @@
 
   <div class="catalog-filters">
     <button class="filter-btn active">Todos</button>
-    <button class="filter-btn">Brasileiros</button>
-    <button class="filter-btn">Europeus</button>
-    <button class="filter-btn">Seleções</button>
-    <button class="filter-btn">Retrô</button>
+    <button class="filter-btn">Brasil</button>
+    <button class="filter-btn">Europa</button>
+    <button class="filter-btn">Américas</button>
+    <button class="filter-btn">Ásia</button>
   </div>
 
   <div class="catalog-grid" id="catalogGrid">
 
-    <!-- PRODUTO EXEMPLO 1 -->
+    <!-- Brasil II Jordan -->
     <div class="product-card">
-      <div class="card-placeholder">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
-        <span>ADICIONAR IMAGEM</span>
+      <div class="card-img">
+        <img src="camisa-do-brasil-azul-away1-f931ff93c1ec340a0c17652211085465-640-0.webp" alt="Camisa Brasil II Jordan 2026" loading="lazy">
+        <div class="card-overlay"></div>
+        <div class="card-badge">NOVO</div>
       </div>
       <div class="card-body">
-        <div class="card-league">Brasileirão</div>
-        <div class="card-name">Nome do Time</div>
-        <div class="card-desc">Temporada 2024/25 · Home</div>
+        <div class="card-league">Seleção Brasileira</div>
+        <div class="card-name">Brasil II Jordan 2026</div>
+        <div class="card-desc">Away · Preta/Azul · Jumpman x CBF</div>
         <div class="card-footer">
-          <div class="card-price">R$ 000<span>+ frete</span></div>
-          <a href="https://instagram.com/gvimports" target="_blank" class="card-btn">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             Tenho Interesse
           </a>
@@ -509,19 +303,20 @@
       </div>
     </div>
 
-    <!-- PRODUTO EXEMPLO 2 -->
+    <!-- Brasil I Nike -->
     <div class="product-card">
-      <div class="card-placeholder">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
-        <span>ADICIONAR IMAGEM</span>
+      <div class="card-img">
+        <img src="2c9ce560.webp" alt="Camisa Brasil I Nike" loading="lazy">
+        <div class="card-overlay"></div>
+        <div class="card-badge">NOVO</div>
       </div>
       <div class="card-body">
-        <div class="card-league">Liga Europeia</div>
-        <div class="card-name">Nome do Time</div>
-        <div class="card-desc">Temporada 2024/25 · Away</div>
+        <div class="card-league">Seleção Brasileira</div>
+        <div class="card-name">Brasil I Nike 2026</div>
+        <div class="card-desc">Home · Amarela · Copa do Mundo</div>
         <div class="card-footer">
-          <div class="card-price">R$ 000<span>+ frete</span></div>
-          <a href="https://instagram.com/gvimports" target="_blank" class="card-btn">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             Tenho Interesse
           </a>
@@ -529,19 +324,19 @@
       </div>
     </div>
 
-    <!-- PRODUTO EXEMPLO 3 -->
+    <!-- França II Nike -->
     <div class="product-card">
-      <div class="card-placeholder">
-        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
-        <span>ADICIONAR IMAGEM</span>
+      <div class="card-img">
+        <img src="comprar-camisa-reserva-da-franca-nike-2026-2027-away-2-fora-alternativa-verde-mbappe-copa-do-mundo-olise-griezman-torcedor-masculina-homem-autentica-original-oficial-frete-gratis-8-bada4e1a99092c86ba17775613818.webp" alt="Camisa França II Nike" loading="lazy">
+        <div class="card-overlay"></div>
       </div>
       <div class="card-body">
-        <div class="card-league">Seleções</div>
-        <div class="card-name">Nome do Time</div>
-        <div class="card-desc">Copa 2024 · Home</div>
+        <div class="card-league">Seleção Francesa</div>
+        <div class="card-name">França II Nike 2026/27</div>
+        <div class="card-desc">Away · Verde Água · Copa do Mundo</div>
         <div class="card-footer">
-          <div class="card-price">R$ 000<span>+ frete</span></div>
-          <a href="https://instagram.com/gvimports" target="_blank" class="card-btn">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             Tenho Interesse
           </a>
@@ -549,11 +344,167 @@
       </div>
     </div>
 
-  </div><!-- /catalog-grid -->
+    <!-- França I Nike -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="a728baa3-2c237a302a43547b9c17677865140258-1024-1024.webp" alt="Camisa França I Nike" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Francesa</div>
+        <div class="card-name">França I Nike</div>
+        <div class="card-desc">Home · Azul Escura · FFF</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
 
-  <div class="catalog-add">
-    <strong>+ Adicionar Novo Produto</strong>
-    Duplique um dos cards acima no HTML e substitua as informações. O grid se ajusta automaticamente.
+    <!-- Noruega I Nike -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="comprar-camisa-titular-da-noruega-nike-2026-2027-copa-do-mundo-home-1-casa-principal-vermelha-azul-haaland-torcedor-masculina-homem-autentica-original-oficial-frete-gratis-2-3f959734789a73ec2717739269798329-102.webp" alt="Camisa Noruega I Nike" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Norueguesa</div>
+        <div class="card-name">Noruega I Nike 2026/27</div>
+        <div class="card-desc">Home · Vermelha · Copa do Mundo</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Noruega II Nike -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="camisa-noruega-away1-6ebb5ae40c855f236f17750883248677-480-0.webp" alt="Camisa Noruega II Nike" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Norueguesa</div>
+        <div class="card-name">Noruega II Nike</div>
+        <div class="card-desc">Away · Preta · Norge</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Argentina I Adidas -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="camisa-argentina-home-26-27-copa-do-mundo-jogador-adidas-imagem1-jpg-585cab5335d29f59d917629540401589-1024-1024.webp" alt="Camisa Argentina I Adidas" loading="lazy">
+        <div class="card-overlay"></div>
+        <div class="card-badge">CAMPEÃO</div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Argentina</div>
+        <div class="card-name">Argentina I Adidas 2026/27</div>
+        <div class="card-desc">Home · Branca/Azul · Copa do Mundo</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Japão I Adidas -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="camisa-japao-25-26-azul-home-2025-2026-uniforme-titular-doan-endo-mitoma-kubo-suzuki-minamino-kamada-nakamura-ito-sano-maeda-1-027afcd9ab136bc8ad17624521417539-1024-1024.webp" alt="Camisa Japão I Adidas" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Japonesa</div>
+        <div class="card-name">Japão I Adidas 2025/26</div>
+        <div class="card-desc">Home · Azul · JFA</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- México Adidas -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="camisa-selecao-mexico-away-25-26-torcedor-adidas-preta-imagem1-webp-462de648da737bcb3617468453267218-1024-1024.webp" alt="Camisa México Adidas" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Mexicana</div>
+        <div class="card-name">México Adidas Originals 2025/26</div>
+        <div class="card-desc">Away · Preta · FMF</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alemanha I Adidas -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="camisa-alemanha-home-26-27-copa-do-mundo-jogador-adidas-imagem1-webp-f2aebbe9a583c2030917617036790784-1024-1024.webp" alt="Camisa Alemanha I Adidas" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Alemã</div>
+        <div class="card-name">Alemanha I Adidas 2026/27</div>
+        <div class="card-desc">Home · Branca · Copa do Mundo</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Alemanha II Adidas -->
+    <div class="product-card">
+      <div class="card-img">
+        <img src="image.png" alt="Alemanha Copa do Mundo 2026 Adidas" loading="lazy">
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-league">Seleção Alemã</div>
+        <div class="card-name">Alemanha Adidas Copa 2026</div>
+        <div class="card-desc">Copa do Mundo · Adidas</div>
+        <div class="card-footer">
+          <div class="card-price">R$ 140<span>Para mais info, chame no Instagram</span></div>
+          <a href="https://instagram.com/gv.imports10" target="_blank" class="card-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Tenho Interesse
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -617,33 +568,33 @@
         <div class="trust-icon">📦</div>
         <div>
           <h4>Entrega Rastreada</h4>
-          <p>Todo pedido possui código de rastreamento enviado diretamente pelo Instagram assim que despachado. Acompanhe em tempo real.</p>
+          <p>Todo pedido possui código de rastreamento enviado diretamente pelo Instagram assim que despachado.</p>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">💬</div>
         <div>
           <h4>Suporte Humanizado</h4>
-          <p>Fale diretamente com a equipe GV Imports pelo Instagram. Somos pessoas reais prontas para te ajudar em cada dúvida.</p>
+          <p>Fale diretamente com a equipe GV Imports pelo Instagram. Somos pessoas reais prontas para te ajudar.</p>
         </div>
       </div>
       <div class="trust-item">
         <div class="trust-icon">⭐</div>
         <div>
           <h4>Mais de 500 Clientes Satisfeitos</h4>
-          <p>Nossa reputação foi construída pedido a pedido, com atenção ao detalhe e compromisso com a qualidade que o futebol merece.</p>
+          <p>Nossa reputação foi construída pedido a pedido, com atenção ao detalhe e compromisso com a qualidade.</p>
         </div>
       </div>
     </div>
     <div class="trust-visual">
       <div class="trust-shield">🛡️</div>
       <h3>GARANTIA GV IMPORTS</h3>
-      <p>Cada compra realizada através do nosso Instagram é coberta pela nossa política de satisfação. Se o produto não atender suas expectativas, cuidamos disso.</p>
+      <p>Cada compra realizada através do nosso Instagram é coberta pela nossa política de satisfação.</p>
       <div class="trust-guarantee">
         <strong>✅ Reembolso em até 15 dias</strong>
         <span>Solicitações feitas pelo Instagram dentro do prazo são processadas sem burocracia.</span>
       </div>
-      <a href="https://instagram.com/gvimports" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
+      <a href="https://instagram.com/gv.imports10" target="_blank" class="btn-primary" style="width:100%;justify-content:center;margin-top:8px;">
         Falar no Instagram
       </a>
     </div>
@@ -660,58 +611,28 @@
   </div>
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        As camisas possuem qualidade premium?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Sim! Trabalhamos apenas com fornecedores verificados e de altíssimo padrão. Nossas camisas passam por controle rigoroso antes de serem disponibilizadas no catálogo. Qualidade que você sente na primeira vez que veste.
-      </div>
+      <button class="faq-question" onclick="toggleFaq(this)">As camisas possuem qualidade premium?<span class="faq-icon">+</span></button>
+      <div class="faq-answer">Sim! Trabalhamos apenas com fornecedores verificados e de altíssimo padrão. Nossas camisas passam por controle rigoroso antes de serem disponibilizadas no catálogo.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Como funciona a compra?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Simples! Escolha a camisa no catálogo, clique em "Tenho Interesse" e você será direcionado ao nosso Instagram. Por lá, nossa equipe vai te atender, confirmar disponibilidade, tamanho e fechar o pedido com você.
-      </div>
+      <button class="faq-question" onclick="toggleFaq(this)">Como funciona a compra?<span class="faq-icon">+</span></button>
+      <div class="faq-answer">Simples! Escolha a camisa no catálogo, clique em "Tenho Interesse" e você será direcionado ao nosso Instagram @gv.imports10. Por lá nossa equipe vai te atender, confirmar tamanho e fechar o pedido.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Como funciona a entrega?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Após a confirmação do pagamento, seu pedido é preparado e enviado com código de rastreamento. O prazo varia de acordo com a sua região, e você pode acompanhar tudo pelo código enviado via Instagram.
-      </div>
+      <button class="faq-question" onclick="toggleFaq(this)">Como funciona a entrega?<span class="faq-icon">+</span></button>
+      <div class="faq-answer">Após a confirmação do pagamento, seu pedido é preparado e enviado com código de rastreamento. O prazo varia de acordo com a sua região.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Existe garantia? Como funciona o reembolso?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        Sim! Você tem até 15 dias após o recebimento para solicitar reembolso caso o produto não atenda suas expectativas. Basta entrar em contato pelo Instagram, explicar o motivo e processamos sem burocracia.
-      </div>
+      <button class="faq-question" onclick="toggleFaq(this)">Existe garantia? Como funciona o reembolso?<span class="faq-icon">+</span></button>
+      <div class="faq-answer">Sim! Você tem até 15 dias após o recebimento para solicitar reembolso. Basta entrar em contato pelo Instagram @gv.imports10 e processamos sem burocracia.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Como funciona a promoção "compre 3, ganhe 1"?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        É bem simples: escolha 3 camisas de qualquer modelo disponível no catálogo, entre em contato pelo Instagram e informe que deseja aproveitar a promoção. A 4ª camisa (de menor valor) fica por nossa conta — sem letras miúdas.
-      </div>
+      <button class="faq-question" onclick="toggleFaq(this)">Como funciona a promoção "compre 3, ganhe 1"?<span class="faq-icon">+</span></button>
+      <div class="faq-answer">Escolha 3 camisas de qualquer modelo, entre em contato pelo Instagram e informe que deseja aproveitar a promoção. A 4ª camisa (de menor valor) fica por nossa conta.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-question" onclick="toggleFaq(this)">
-        Vocês têm loja física?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-answer">
-        No momento trabalhamos exclusivamente pelo Instagram. Isso nos permite manter preços competitivos e oferecer atendimento personalizado para cada cliente. Todo o processo de compra, dúvidas e suporte acontece por lá.
-      </div>
+      <button class="faq-question" onclick="toggleFaq(this)">Vocês têm loja física?<span class="faq-icon">+</span></button>
+      <div class="faq-answer">No momento trabalhamos exclusivamente pelo Instagram @gv.imports10. Isso nos permite manter preços competitivos e oferecer atendimento personalizado para cada cliente.</div>
     </div>
   </div>
 </section>
@@ -721,7 +642,7 @@
   <span class="section-tag">📲 Faça seu pedido</span>
   <h2>PRONTO PARA<br>VESTIR SUA PAIXÃO?</h2>
   <p>Acesse nosso Instagram, escolha sua camisa e receba em casa.</p>
-  <a href="https://instagram.com/gvimports" target="_blank" class="btn-primary">
+  <a href="https://instagram.com/gv.imports10" target="_blank" class="btn-primary">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
     Chamar no Instagram Agora
   </a>
@@ -734,7 +655,7 @@
       <div class="logo">GV<span>.</span>IMPORTS</div>
       <p>Camisas de futebol premium para quem vive o esporte. Qualidade, atendimento e paixão pelo futebol em cada pedido.</p>
       <div class="footer-social">
-        <a href="https://instagram.com/gvimports" target="_blank" class="social-btn">
+        <a href="https://instagram.com/gv.imports10" target="_blank" class="social-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
         </a>
       </div>
@@ -751,7 +672,7 @@
     <div class="footer-col">
       <h4>Contato</h4>
       <ul>
-        <li><a href="https://instagram.com/gvimports" target="_blank">@gvimports</a></li>
+        <li><a href="https://instagram.com/gv.imports10" target="_blank">@gv.imports10</a></li>
         <li><a href="#faq">Como comprar?</a></li>
         <li><a href="#faq">Reembolso</a></li>
         <li><a href="#faq">Garantia</a></li>
@@ -763,7 +684,7 @@
     <p>Desenvolvido com ❤️ para quem ama futebol</p>
   </div>
 </footer>
-</div><!-- /z-index wrapper -->
+</div>
 
 <script>
 function toggleFaq(btn) {
@@ -773,10 +694,7 @@ function toggleFaq(btn) {
     q.classList.remove('open');
     q.nextElementSibling.classList.remove('open');
   });
-  if (!isOpen) {
-    btn.classList.add('open');
-    answer.classList.add('open');
-  }
+  if (!isOpen) { btn.classList.add('open'); answer.classList.add('open'); }
 }
 function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); }
 function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); }
